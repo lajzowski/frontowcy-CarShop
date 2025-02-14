@@ -1,0 +1,32 @@
+{
+  "categories": [
+    {
+      "id": "ds22",
+      "position": 1,
+      "identifier":  "basic",
+      "name": "Podstawowe"
+    }
+  ],
+
+  "equipments": [
+    {
+      "id": "chj",
+      "name": "Otwierany Dach",
+      "partUnique": "opening-roof",
+      "price": 7999,
+      "categoryId": "ds22"
+    }
+  ],
+
+  "orders": [
+    {
+      "firstName": "Marcin",
+      "lastName": "Testowy",
+      "email": "sadasfooo@oo.pl",
+      "value": 7999,
+      "details": "opening-roof|"
+    }
+  ]
+
+
+}
