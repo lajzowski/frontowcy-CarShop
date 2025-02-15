@@ -1,3 +1,9 @@
+import { CategoriesTable } from './CategoriesTable.tsx';
+
 export const Categories = () => {
-  return <div>Test 1234</div>;
+  return (
+    <>
+      <CategoriesTable />
+    </>
+  );
 };
