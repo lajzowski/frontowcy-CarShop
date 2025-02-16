@@ -8,8 +8,12 @@ import { Categories } from './components/Categories/Categories.tsx';
 import { Content } from './components/layout/Content/Content.tsx';
 import { OneCategoryTable } from './components/Categories/OneCategoryTable.tsx';
 
+const systemPrefersDark = window.matchMedia(
+  '(prefers-color-scheme: dark)'
+).matches;
+
 export const Router = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(systemPrefersDark);
 
   return (
     <ConfigProvider
