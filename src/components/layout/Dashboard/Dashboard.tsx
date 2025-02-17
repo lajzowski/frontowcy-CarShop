@@ -1,5 +1,5 @@
 import { Layout, Menu, theme } from 'antd';
-import { Outlet, useNavigate } from 'react-router';
+import { Outlet, useLocation, useNavigate } from 'react-router';
 
 const { Header, Content, Footer } = Layout;
 
@@ -9,6 +9,8 @@ import { useEffect } from 'react';
 export const Dashboard = () => {
   const { token } = theme.useToken();
   const navigate = useNavigate();
+
+  const location = useLocation();
 
   useEffect(() => {
     const body = document.body;
@@ -23,14 +25,18 @@ export const Dashboard = () => {
       <Header className={'header'}>
         <div className={'logo'}>Frontowcy CarShop</div>
 
-        <Menu mode='horizontal' defaultSelectedKeys={['1']} className={'menu'}>
-          <Menu.Item key='1' onClick={() => navigate('/categories')}>
+        <Menu
+          mode='horizontal'
+          defaultSelectedKeys={[`${location.pathname.split('/')[1]}`]}
+          className={'menu'}
+        >
+          <Menu.Item key='categories' onClick={() => navigate('/categories')}>
             Kategorie
           </Menu.Item>
-          <Menu.Item onClick={() => navigate('/creator')} key='2'>
+          <Menu.Item onClick={() => navigate('/creator')} key='creator'>
             Kreator
           </Menu.Item>
-          <Menu.Item onClick={() => navigate('/orders')} key='3'>
+          <Menu.Item onClick={() => navigate('/orders')} key='orders'>
             Zamówienia
           </Menu.Item>
         </Menu>
