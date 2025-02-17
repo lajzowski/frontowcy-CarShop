@@ -85,10 +85,18 @@ export const ModalAddEditPart = ({
                   message:
                     'Cena musi być liczbą. Może zawierać część dziesiętną oddzieloną kropką',
                 },
-                {},
               ]}
             >
-              <Input />
+              <Input
+                type='text'
+                onChange={(event) => {
+                  const value = event.target.value;
+                  form.setFieldValue(
+                    'price',
+                    value ? parseFloat(value) : undefined
+                  );
+                }}
+              />
             </Form.Item>
           </Form>
         </Flex>

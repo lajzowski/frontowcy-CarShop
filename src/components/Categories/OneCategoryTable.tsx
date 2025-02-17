@@ -1,7 +1,6 @@
 import { Content } from '../layout/Content/Content.tsx';
 import { useParams } from 'react-router';
 import { useGetQuery } from '../../hooks/useGetQuery.ts';
-import { Category } from '../../types/category.interface.ts';
 import { Table, TableColumnsType } from 'antd';
 import { ButtonAdd } from '../addons/ButtonAdd.tsx';
 import { useQueryClient } from '@tanstack/react-query';
@@ -13,10 +12,7 @@ import { useForm } from 'antd/es/form/Form';
 import useMessage from 'antd/es/message/useMessage';
 import { useState } from 'react';
 import { useCreateMutation } from '../../hooks/useCreateMutation.ts';
-
-interface CategoryWithEquipments extends Category {
-  equipments: Equipment[];
-}
+import { CategoryWithEquipments } from '../../types/category-with-equipments.interface.ts';
 
 export const OneCategoryTable = () => {
   const params = useParams<{ identifier: string }>();
@@ -106,6 +102,7 @@ export const OneCategoryTable = () => {
   const formAddPartSubmit = (formData: Equipment) => {
     if (data) {
       formData.categoryId = data[0].id;
+      formData.price = Number(formData.price);
     } else {
       return;
     }
@@ -150,22 +147,25 @@ export const OneCategoryTable = () => {
       .then(() => {
         // Proceed with submitting formData
 
-        editMutate(formData, {
-          onSuccess: async (equipment) => {
-            // odświeżanie danych
-            queryClient.invalidateQueries({
-              queryKey: [`categories?identifier=${params.identifier}&`],
-            });
+        editMutate(
+          { ...formData, price: Number(formData.price) },
+          {
+            onSuccess: async (equipment) => {
+              // odświeżanie danych
+              queryClient.invalidateQueries({
+                queryKey: [`categories?identifier=${params.identifier}&`],
+              });
 
-            // dodawanie 1 pozycji do danych
-            /*            queryClient.setQueryData<Equipment[]>(
+              // dodawanie 1 pozycji do danych
+              /*            queryClient.setQueryData<Equipment[]>(
               [`categories?identifier=${params.identifier}&`],
               (oldData) => [...(oldData || []), equipment]
             );*/
-            messageApi.success(`Część ${equipment.name} została dodana`);
-            resetFormEditPart();
-          },
-        });
+              messageApi.success(`Część ${equipment.name} została dodana`);
+              resetFormEditPart();
+            },
+          }
+        );
       })
       .catch((error) => {
         console.error('Validation failed:', error);
