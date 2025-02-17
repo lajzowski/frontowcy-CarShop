@@ -1,0 +1,85 @@
+.description {
+  border-bottom: lightgray 0.5px solid;
+}
+.button-start-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 25px;
+  button {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 20px;
+  }
+}
+
+
+.creator-table {
+
+}
+
+.creator-checkbox {
+  width: 100%;
+  display: flex;
+  padding: 10px;
+  letter-spacing: 1px;
+
+  .price {
+    margin-left: auto;
+    font-weight: 500;
+    letter-spacing: 2px;
+  }
+}
+
+.creator-buttons {
+  margin: 30px;
+  display: flex;
+
+  justify-content: space-between;
+
+  button {
+    width: 150px;
+    letter-spacing: 2px;
+    padding: 20px;
+  }
+
+}
+
+
+.total-price {
+  padding: 20px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-size: 24px;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.summary--category-name {
+  font-weight: 700;
+  font-size: 24px;
+  margin: 34px;
+  letter-spacing: 2px;
+}
+
+.summary--category-equipments {
+  font-size: 14px;
+  letter-spacing: 2px;
+  line-height: 28px;
+  margin: 20px 32px;
+}
+
+.summary--category-equipments-one {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+
+.summary--save {
+  line-height: 36px;
+  p {
+    margin: 32px;
+  }
+}

@@ -7,6 +7,9 @@ import { ButtonChangeStyle } from './components/ButtonChangeStyle.tsx';
 import { Categories } from './components/Categories/Categories.tsx';
 import { Content } from './components/layout/Content/Content.tsx';
 import { OneCategoryTable } from './components/Categories/OneCategoryTable.tsx';
+import { Creator } from './components/Creator/Creator.tsx';
+import { CreatorTable } from './components/Creator/CreatorTable.tsx';
+import { CreatorSummary } from './components/Creator/CreatorSummary.tsx';
 
 const systemPrefersDark = window.matchMedia(
   '(prefers-color-scheme: dark)'
@@ -43,6 +46,10 @@ export const Router = () => {
             path={'/categories/:identifier'}
             element={<OneCategoryTable />}
           />
+
+          <Route path={'/creator'} element={<Creator />}></Route>
+          <Route path={'/creator/summary'} element={<CreatorSummary />}></Route>
+          <Route path={'/creator/:identifier'} element={<CreatorTable />} />
 
           <Route path='*' element={<NotFound />}></Route>
         </Route>
