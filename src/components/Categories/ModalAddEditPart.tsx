@@ -74,6 +74,22 @@ export const ModalAddEditPart = ({
             >
               <Input />
             </Form.Item>
+
+            <Form.Item
+              label='Cena'
+              name='price'
+              rules={[
+                {
+                  required: true,
+                  pattern: /^[0-9]+(\.[0-9]+)?$/,
+                  message:
+                    'Cena musi być liczbą. Może zawierać część dziesiętną oddzieloną kropką',
+                },
+                {},
+              ]}
+            >
+              <Input />
+            </Form.Item>
           </Form>
         </Flex>
       }
