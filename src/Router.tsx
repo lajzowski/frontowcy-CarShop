@@ -10,6 +10,8 @@ import { OneCategoryTable } from './components/Categories/OneCategoryTable.tsx';
 import { Creator } from './components/Creator/Creator.tsx';
 import { CreatorTable } from './components/Creator/CreatorTable.tsx';
 import { CreatorSummary } from './components/Creator/CreatorSummary.tsx';
+import { Orders } from './components/Orders/Orders.tsx';
+import { OrderOne } from './components/Orders/OrderOne.tsx';
 
 const systemPrefersDark = window.matchMedia(
   '(prefers-color-scheme: dark)'
@@ -50,6 +52,9 @@ export const Router = () => {
           <Route path={'/creator'} element={<Creator />}></Route>
           <Route path={'/creator/summary'} element={<CreatorSummary />}></Route>
           <Route path={'/creator/:identifier'} element={<CreatorTable />} />
+
+          <Route path={'/orders'} element={<Orders />}></Route>
+          <Route path={'/orders/:id'} element={<OrderOne />}></Route>
 
           <Route path='*' element={<NotFound />}></Route>
         </Route>

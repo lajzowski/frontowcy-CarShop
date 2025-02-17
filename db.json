@@ -3,11 +3,22 @@
     {
       "id": "ds22",
       "position": 1,
-      "identifier":  "basic",
+      "identifier": "basic",
       "name": "Podstawowe"
+    },
+    {
+      "id": "cfde",
+      "name": "Dodatkowe wyposażenie",
+      "identifier": "additionals",
+      "position": 3
+    },
+    {
+      "id": "a0a5",
+      "name": "Tapicerka",
+      "identifier": "upholstery",
+      "position": 2
     }
   ],
-
   "equipments": [
     {
       "id": "chj",
@@ -15,18 +26,74 @@
       "partUnique": "opening-roof",
       "price": 7999,
       "categoryId": "ds22"
+    },
+    {
+      "id": "e11b",
+      "name": "Audio Burmaster",
+      "partUnique": "burmaster",
+      "categoryId": "cfde",
+      "price": 29000
+    },
+    {
+      "id": "4f0d",
+      "name": "Automatyczna skrzynia biegów",
+      "partUnique": "gearbox",
+      "price": 9000,
+      "categoryId": "ds22"
+    },
+    {
+      "id": "36b5",
+      "name": "Biała skóra",
+      "partUnique": "white skin",
+      "price": 12000,
+      "categoryId": "a0a5"
+    },
+    {
+      "id": "8574",
+      "name": "Kremowa skóra",
+      "partUnique": "creame skin",
+      "price": 12000,
+      "categoryId": "a0a5"
+    },
+    {
+      "id": "88c8",
+      "name": "Alkantara",
+      "partUnique": "alcantara",
+      "price": 6000,
+      "categoryId": "a0a5"
     }
   ],
-
   "orders": [
     {
+      "id": "feba",
       "firstName": "Marcin",
-      "lastName": "Testowy",
-      "email": "sadasfooo@oo.pl",
-      "value": 7999,
-      "details": "opening-roof|"
+      "lastName": "Test",
+      "email": "sad@dd.pl",
+      "details": "|dasda|opening-roof|gearbox|creame skin|burmaster"
+    },
+    {
+      "id": "8d97",
+      "firstName": "dasda",
+      "lastName": "xxxx",
+      "email": "dsada@dddd.pl",
+      "details": "opening-roof|gearbox|creame skin|burmaster",
+      "value": 57999
+    },
+    {
+      "id": "f17d",
+      "firstName": "dadsad",
+      "lastName": "dasdsa",
+      "email": "dasdassa@dddd.pl",
+      "details": "gearbox|alcantara|burmaster",
+      "value": 44000
+    },
+    {
+      "id": "bf22",
+      "firstName": "Janusz",
+      "lastName": "Kowalski",
+      "email": "Kowalski@fkmail.fk",
+      "details": "opening-roof|white skin|creame skin|alcantara|burmaster",
+      "value": 66999
     }
   ]
-
-
 }
